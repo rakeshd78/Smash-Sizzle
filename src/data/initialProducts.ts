@@ -1,0 +1,242 @@
+import { Product } from '../types';
+
+export const initialProducts: Omit<Product, 'id'>[] = [
+  {
+    name: "The Ultimate Smash Burger",
+    description: "Two ultra-crispy smashed Angus beef patties, double aged cheddar, caramelized sweet onions, dill pickles, and signature Sizzle glaze on toasted glossy brioche.",
+    price: 11.99,
+    category: "Burgers",
+    subCategory: "Double & Triple Beast",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    reviewsCount: 184,
+    isBestseller: true,
+    isFeatured: true,
+    stock: 65,
+    ingredients: "Angus beef patties, Aged cheddar, Brioche bun, Caramelized onions, Dill pickles, Signature Sizzle sauce",
+    allergens: "Gluten, Dairy, Soy",
+    options: [
+      {
+        name: "Patty Size",
+        choices: [
+          { label: "Double Smash (Standard)", priceExtra: 0 },
+          { label: "Triple Beast (+3 patties)", priceExtra: 3.99 },
+          { label: "Quadruple Monster (+4 patties)", priceExtra: 5.99 }
+        ]
+      },
+      {
+        name: "Cheese Level",
+        choices: [
+          { label: "Melted American", priceExtra: 0 },
+          { label: "Extra Aged Cheddar", priceExtra: 1.50 },
+          { label: "Smoked Gouda & Jalapeno", priceExtra: 1.75 }
+        ]
+      }
+    ]
+  },
+  {
+    name: "Black Truffle & Bacon Sizzle",
+    description: "Charcoal grilled smash patty, crispy applewood smoked bacon, melted Swiss raclette, black truffle aioli, and crispy shallots.",
+    price: 13.99,
+    category: "Burgers",
+    subCategory: "Truffle & Bacon Specials",
+    image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    reviewsCount: 132,
+    isBestseller: true,
+    isFeatured: true,
+    stock: 40,
+    ingredients: "Angus beef, Applewood bacon, Swiss cheese, Black truffle aioli, Fried shallots, Brioche bun",
+    allergens: "Gluten, Dairy, Eggs"
+  },
+  {
+    name: "Classic Single Smash Deluxe",
+    description: "Single lacy-crust Angus smash patty, melted American cheese, crisp bibb lettuce, ripe tomato, red onion, and burger relish.",
+    price: 8.99,
+    category: "Burgers",
+    subCategory: "Single Smash",
+    image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
+    rating: 4.7,
+    reviewsCount: 105,
+    stock: 70,
+    ingredients: "Angus beef patty, American cheese, Lettuce, Tomato, Onion, Relish",
+    allergens: "Gluten, Dairy"
+  },
+  {
+    name: "Nashville Firecracker Hot Chicken",
+    description: "Double buttermilk fried chicken breast dipped in blazing cayenne chili oil, topped with tangy vinegar slaw and garlic pickles.",
+    price: 11.49,
+    category: "Chicken",
+    subCategory: "Fried Hot Chicken",
+    image: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    reviewsCount: 156,
+    isBestseller: true,
+    isFeatured: true,
+    stock: 50,
+    ingredients: "Chicken breast, Nashville chili oil, Cabbage slaw, Garlic pickles, Brioche bun",
+    allergens: "Gluten, Dairy, Eggs"
+  },
+  {
+    name: "Crispy Korean Sticky Wings (8 pcs)",
+    description: "Ultra-crispy jumbo wings glazed in spicy gochujang sweet chili, toasted sesame seeds, and crushed roasted peanuts.",
+    price: 13.49,
+    category: "Chicken",
+    subCategory: "Spicy Wings",
+    image: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    reviewsCount: 215,
+    isBestseller: true,
+    stock: 60,
+    ingredients: "Chicken wings, Gochujang glaze, Honey, Garlic, Sesame seeds, Crushed peanuts",
+    allergens: "Soy, Peanuts"
+  },
+  {
+    name: "Golden Hand-Cut Truffle Fries",
+    description: "Triple-cooked Idaho potatoes tossed in white truffle oil, grated parmesan, sea salt flakes, and fresh rosemary.",
+    price: 5.49,
+    category: "French Fries",
+    subCategory: "Truffle & Loaded",
+    image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    reviewsCount: 240,
+    isBestseller: true,
+    stock: 120,
+    ingredients: "Idaho russet potatoes, White truffle oil, Parmesan, Sea salt, Rosemary",
+    allergens: "Dairy"
+  },
+  {
+    name: "Smothered Volcano Cheese Fries",
+    description: "Mountain of crispy fries drenched in molten hot smoked cheddar fondue, chopped crispy bacon, and charred jalapeño coins.",
+    price: 8.49,
+    category: "French Fries",
+    subCategory: "Truffle & Loaded",
+    image: "https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    reviewsCount: 198,
+    isFeatured: true,
+    stock: 75,
+    ingredients: "French fries, Cheddar fondue, Bacon, Jalapeños, Chives",
+    allergens: "Dairy"
+  },
+  {
+    name: "Beer-Battered Crisp Onion Rings",
+    description: "Thick-cut sweet Vidalia onions dipped in craft IPA beer batter and flash-fried to crunchy amber gold, served with smoked paprika dip.",
+    price: 5.99,
+    category: "French Fries",
+    subCategory: "Onion Rings & Dips",
+    image: "https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=800&q=80",
+    rating: 4.7,
+    reviewsCount: 96,
+    stock: 60,
+    ingredients: "Vidalia onions, Beer batter, Sea salt, Paprika dipping sauce",
+    allergens: "Gluten, Dairy, Eggs"
+  },
+  {
+    name: "Spicy Diavola Pepperoni Pizza",
+    description: "Fire-baked artisan sourdough crust, San Marzano marinara, fior di latte mozzarella, cupping pepperoni, and hot honey drizzle.",
+    price: 16.49,
+    category: "Pizzas",
+    subCategory: "Spicy & Pepperoni",
+    image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    reviewsCount: 110,
+    isBestseller: true,
+    stock: 35,
+    ingredients: "Sourdough crust, San Marzano tomatoes, Fior di latte, Pepperoni cups, Hot honey",
+    allergens: "Gluten, Dairy"
+  },
+  {
+    name: "Black Truffle Margherita Pizza",
+    description: "Stone-fired crust with blistered crust, creamy buffalo mozzarella, San Marzano tomato reduction, fresh basil leaves, and shaved black truffles.",
+    price: 15.99,
+    category: "Pizzas",
+    subCategory: "Sourdough Artisan",
+    image: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    reviewsCount: 84,
+    stock: 40,
+    ingredients: "Stone-ground flour, San Marzano sauce, Buffalo mozzarella, Truffles, Fresh basil",
+    allergens: "Gluten, Dairy"
+  },
+  {
+    name: "Smoky Texas Pulled Pork Sandwich",
+    description: "14-hour hardwood smoked pork shoulder pulled juicy and tossed in dark molasses BBQ sauce with honey crisp slaw on brioche.",
+    price: 11.99,
+    category: "Sandwiches",
+    subCategory: "BBQ & Pulled Meats",
+    image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80",
+    rating: 4.7,
+    reviewsCount: 88,
+    stock: 45,
+    ingredients: "Pork shoulder, Molasses BBQ glaze, Apple slaw, Pickles, Brioche bun",
+    allergens: "Gluten"
+  },
+  {
+    name: "Crispy Chipotle Chicken Wrap",
+    description: "Golden buttermilk chicken tenders, smoked bacon, shredded romaine, pico de gallo, and smoky chipotle cream in a warm grilled tortilla.",
+    price: 10.49,
+    category: "Wraps",
+    subCategory: "Grilled & Crispy Wraps",
+    image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    reviewsCount: 92,
+    stock: 55,
+    ingredients: "Flour tortilla, Fried chicken tenders, Bacon, Romaine lettuce, Chipotle crema",
+    allergens: "Gluten, Dairy, Eggs"
+  },
+  {
+    name: "Glossy Oreo Velvet Milkshake",
+    description: "Decadent hand-spun Madagascar vanilla bean milkshake blended with crushed Oreo cookies, dark chocolate ganache drip, and Oreo crumble mountain.",
+    price: 7.29,
+    category: "Beverages",
+    subCategory: "Hand-Spun Milkshakes",
+    image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80",
+    rating: 5.0,
+    reviewsCount: 230,
+    isBestseller: true,
+    stock: 90,
+    ingredients: "Vanilla bean ice cream, Whole milk, Double stuffed Oreos, Dark chocolate syrup, Whipped cream",
+    allergens: "Dairy, Gluten, Soy"
+  },
+  {
+    name: "Wild Strawberry Sunset Shake",
+    description: "Ripe Pacific strawberries pureed with rich strawberry ice cream, topped with marshmallow fluff, strawberry syrup drizzle, and white chocolate curls.",
+    price: 7.29,
+    category: "Beverages",
+    subCategory: "Hand-Spun Milkshakes",
+    image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    reviewsCount: 140,
+    stock: 85,
+    ingredients: "Strawberries, Sweet cream ice cream, Milk, Marshmallow cream, White chocolate",
+    allergens: "Dairy"
+  },
+  {
+    name: "Iced Sizzle Sparkler (Zero Sugar)",
+    description: "Sparkling iced citrus infusion with fresh mint leaves, ruby blood orange, and a touch of organic agave.",
+    price: 4.49,
+    category: "Beverages",
+    subCategory: "Iced Sodas & Chillers",
+    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80",
+    rating: 4.7,
+    reviewsCount: 80,
+    stock: 100,
+    ingredients: "Carbonated mineral water, Blood orange extract, Mint, Agave",
+    allergens: "None"
+  },
+  {
+    name: "Molten Dark Chocolate Lava Cake",
+    description: "Warm Belgian chocolate soufflé cake with an explosion of warm molten fudge center, accompanied by hand-churned vanilla bean ice cream.",
+    price: 7.99,
+    category: "Desserts",
+    subCategory: "Lava Cakes & Sweets",
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    reviewsCount: 175,
+    isFeatured: true,
+    stock: 45,
+    ingredients: "Belgian dark chocolate, Butter, Farm eggs, Raw sugar, Flour, Vanilla bean cream",
+    allergens: "Gluten, Dairy, Eggs"
+  }
+];

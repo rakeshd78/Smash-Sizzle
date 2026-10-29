@@ -1,0 +1,85 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Fast food menu item",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 500 },
+        "price": { "type": "number" },
+        "category": { "type": "string" },
+        "image": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewsCount": { "type": "number" },
+        "isBestseller": { "type": "boolean" },
+        "isFeatured": { "type": "boolean" },
+        "stock": { "type": "number" },
+        "ingredients": { "type": "string" },
+        "allergens": { "type": "string" }
+      },
+      "required": ["name", "price", "category", "image"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer order",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "deliveryFee": { "type": "number" },
+        "tax": { "type": "number" },
+        "total": { "type": "number" },
+        "paymentStatus": { "type": "string" },
+        "orderStatus": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["userId", "customerName", "email", "phone", "address", "total", "orderStatus"]
+    },
+    "Promo": {
+      "title": "Promo",
+      "description": "Discount promo code",
+      "type": "object",
+      "properties": {
+        "code": { "type": "string" },
+        "discountPercent": { "type": "number" },
+        "active": { "type": "boolean" }
+      },
+      "required": ["code", "discountPercent"]
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Store configuration",
+      "type": "object",
+      "properties": {
+        "externalPaymentUrl": { "type": "string" },
+        "deliveryFee": { "type": "number" },
+        "taxRate": { "type": "number" },
+        "announcementText": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Menu items collection"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Customer orders collection"
+    },
+    "/promos/{promoId}": {
+      "schema": "Promo",
+      "description": "Promo codes collection"
+    },
+    "/settings/{settingId}": {
+      "schema": "Settings",
+      "description": "App settings"
+    }
+  }
+}

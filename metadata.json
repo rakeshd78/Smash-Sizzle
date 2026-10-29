@@ -1,0 +1,6 @@
+{
+  "name": "Smash & Sizzle - Fast Food E-Commerce",
+  "description": "Modern fast-food e-commerce website with smash burgers, crispy fries, shakes, online ordering, cart, checkout, order tracking, and admin dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
